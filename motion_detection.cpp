@@ -25,7 +25,7 @@ int main(int argc, char** argv) {
         return -1;
     }
 
-    int jump = 5;
+    int jump = 2;
     while (true) {
         cap.read(cur_frame);
         if (cur_frame.empty()) {
