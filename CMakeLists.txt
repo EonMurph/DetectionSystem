@@ -4,7 +4,7 @@ set(CMAKE_CXX_STANDARD 17)
 project(MotionDetection)
 project(DetectionSystem)
 
-set(CMAKE_CPP_FLAGS "${CMAKE_C_FLAGS} -Wall -Werror -g")
+set(CMAKE_CPP_FLAGS "${CMAKE_CPP_FLAGS} -Wall -Werror -g")
 
 set(SRC_DIR ${CMAKE_SOURCE_DIR}/src)
 set(INC_DIR ${CMAKE_SOURCE_DIR}/include)
