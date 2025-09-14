@@ -3,32 +3,11 @@
 #include <opencv2/highgui.hpp>
 #include <opencv2/imgproc.hpp>
 #include <opencv2/videoio.hpp>
+#include "area.hpp"
 
 using namespace cv;
 using namespace std;
 
-class Area {
-   public:
-    int x, y, w, h;
-    Rect rect;
-    Area(int x, int y, int w, int h) {
-        this->x = x;
-        this->y = y;
-        this->w = w;
-        this->h = h;
-        Rect r(x, y, w, h);
-        this->rect = r;
-    }
-
-    void scan_area(Mat frame) {
-        for (int i = this->x; i < this->x + this->w; i++) {
-            for (int j = this->y; j < this->y + this->h; j++) {
-                Point center(i, j);
-                circle(frame, center, 0, Scalar(0, 255, 0), -1);
-            }
-        }
-    }
-};
 
 int main() {
     VideoCapture cap;
@@ -49,7 +28,7 @@ int main() {
         }
 
         rectangle(frame, search_area.rect, Scalar(0, 0, 255), 3);
-        search_area.scan_area(frame);
+        search_area.scanArea(frame);
         imshow("Camera", frame);
         if (waitKey(1) >= 0) {
             break;
