@@ -12,6 +12,7 @@ set(INC_DIR ${CMAKE_SOURCE_DIR}/include)
 set(SRC_FILES
     ${SRC_DIR}/main.cpp
     ${SRC_DIR}/area.cpp
+	${SRC_DIR}/face.cpp
 )
 
 find_package(OpenCV REQUIRED)
